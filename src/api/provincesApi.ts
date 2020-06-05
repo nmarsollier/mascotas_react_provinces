@@ -1,7 +1,6 @@
-import axios from "axios";
 
-axios.defaults.headers.common["Content-Type"] = "application/json";
 import { environment } from "mascotas_react_common"
+import { securedAxios } from "mascotas_react_store";
 
 export interface Province {
     id: string;
@@ -10,7 +9,7 @@ export interface Province {
 
 export async function getProvinces(): Promise<Province[]> {
     try {
-        const res = await axios.get(environment.backendUrl + "/v1/province");
+        const res = await securedAxios().get(environment.backendUrl + "/v1/province");
         return Promise.resolve(res.data);
     } catch (err) {
         return Promise.reject(err);
