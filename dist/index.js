@@ -1,4 +1,4 @@
-require('react');
+var mascotas_react_common = require('mascotas_react_common');
 
 // A type of promise-like that resolves synchronously and supports only one observer
 
@@ -1443,14 +1443,10 @@ axios_1.default = _default;
 
 var axios$1 = axios_1;
 
-var environment = {
-  backendUrl: process.env.BACKEND_URL || "http://localhost:3000"
-};
-
 var getProvinces = function getProvinces() {
   try {
     return Promise.resolve(_catch(function () {
-      return Promise.resolve(axios$1.get(environment.backendUrl + "/v1/province")).then(function (res) {
+      return Promise.resolve(axios$1.get(mascotas_react_common.environment.backendUrl + "/v1/province")).then(function (res) {
         return Promise.resolve(res.data);
       });
     }, function (err) {

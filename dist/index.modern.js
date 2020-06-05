@@ -1,4 +1,4 @@
-import 'react';
+import { environment } from 'mascotas_react_common';
 
 // A type of promise-like that resolves synchronously and supports only one observer
 
@@ -1442,11 +1442,6 @@ var _default = axios;
 axios_1.default = _default;
 
 var axios$1 = axios_1;
-
-var environment = {
-  backendUrl: process.env.BACKEND_URL || "http://localhost:3000"
-};
-//# sourceMappingURL=index.modern.js.map
 
 var getProvinces = function getProvinces() {
   try {
